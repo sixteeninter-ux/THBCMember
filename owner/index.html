@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="th"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>THBC Owner</title><link rel="stylesheet" href="./style.css"></head>
+<body><main><header><div><h1>THBC Owner</h1><p>BNB Smart Chain Mainnet · THBCMemberV1</p></div><button id="connect">Connect Wallet</button></header>
+<div id="notice" role="status">กำลังโหลดข้อมูลจาก Blockchain...</div>
+<section class="grid"><article><small>THBC Reserve</small><strong id="reserve">—</strong></article><article><small>THBC / 1 USDT</small><strong id="rate">—</strong></article><article><small>Company Share</small><strong id="companyShare">—</strong></article><article><small>Fee Share</small><strong id="feeShare">—</strong></article><article><small>Contract Status</small><strong id="status">—</strong></article><article><small>Next Purchase ID</small><strong id="nextId">—</strong></article></section>
+<section><h2>Contract Configuration</h2><dl><dt>Contract</dt><dd id="contractAddr"></dd><dt>Owner</dt><dd id="owner">—</dd><dt>Company Wallet</dt><dd id="companyWallet">—</dd><dt>Fee Wallet</dt><dd id="feeWallet">—</dd><dt>USDT Token</dt><dd id="usdt">—</dd><dt>THBC Token</dt><dd id="thbc">—</dd></dl><button id="refresh" class="secondary">Refresh On-chain Data</button></section>
+<section><h2>Owner Settings</h2><p class="muted">เฉพาะกระเป๋า Owner เท่านั้นที่ส่งธุรกรรมได้ การแก้ไขค่าต้องยืนยันผ่าน Wallet และเสียค่า Gas</p>
+<div class="forms"><form id="rateForm"><label>THBC ต่อ 1 USDT<input id="rateInput" type="text" inputmode="decimal" placeholder="10" required></label><button>Set Rate</button></form>
+<form id="shareForm"><label>Company Share (%)<input id="shareInput" type="number" min="0" max="100" step="0.01" placeholder="90" required></label><button>Set Company Share</button></form>
+<form id="walletForm"><label>Company Wallet<input id="companyInput" required placeholder="0x..."></label><label>Fee Wallet<input id="feeInput" required placeholder="0x..."></label><button>Set Wallets</button></form>
+<form id="rewardForm"><label>Reward Recipient<input id="rewardTo" required placeholder="0x..."></label><label>Reward THBC<input id="rewardAmount" required inputmode="decimal" placeholder="10"></label><button>Distribute Reward</button></form>
+<form id="withdrawForm"><label>Withdraw Recipient<input id="withdrawTo" required placeholder="0x..."></label><label>Withdraw THBC<input id="withdrawAmount" required inputmode="decimal" placeholder="10"></label><button>Withdraw Reserve</button></form></div>
+<div class="actions"><button id="pause">Pause Contract</button><button id="unpause">Unpause Contract</button></div></section>
+<footer><a id="scan" target="_blank" rel="noopener noreferrer">View Contract on BscScan</a><p>ตรวจสอบทุกธุรกรรมใน Wallet ก่อนยืนยัน อย่าโอนเหรียญไปยังที่อยู่ที่ยังไม่ได้ตรวจสอบ</p></footer></main>
+<script src="https://cdn.jsdelivr.net/npm/ethers@6.13.5/dist/ethers.umd.min.js"></script><script src="./app.js?v=fix-20261116-2"></script></body></html>
